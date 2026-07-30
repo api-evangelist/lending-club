@@ -1,23 +1,87 @@
 aid: lending-club
-name: Lending Club
-description: Lending Club is a company surfaced as a portfolio company of canaan-partners and added to
-  the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+name: LendingClub
+description: LendingClub is a US consumer-finance company and digital bank, originally founded in 2006
+  as a peer-to-peer marketplace lender and later a national bank holding company after its 2021 acquisition
+  of Radius Bancorp. In 2026 the company rebranded as Happen Bank, N.A. (a wholly-owned subsidiary of
+  Happen, Inc.) and moved its public web presence from lendingclub.com to happen.com, where it offers
+  personal loans, auto refinancing, business loans, LevelUp checking and savings accounts, the DebtIQ
+  credit dashboard, and an institutional investing program for marketplace-lending loan buyers. LendingClub
+  historically published a public Investor API for its retail notes marketplace; that marketplace was
+  retired in December 2020 and the developer portal and API documentation are no longer published. As
+  of this enrichment pass the company operates no public developer program, API reference, or SDK
+  surface, and no OpenAPI or event specifications are available to harvest.
 url: https://raw.githubusercontent.com/api-evangelist/lending-club/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://www.happen.com/favicon.ico
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - canaan-partners
 x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier-reason: no-public-api-program
+x-rebrand:
+  as: Happen Bank
+  domain: https://www.happen.com/
+  note: lendingclub.com redirects to happen.com
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
+- Financial Services
+- Banking
+- Lending
+- Consumer Finance
+- Fintech
+- Marketplace Lending
+- Personal Loans
 apis: []
+common:
+- type: DomainSecurity
+  url: security/lending-club-domain-security.yml
+- type: Website
+  url: https://www.happen.com/
+- type: About
+  url: https://www.happen.com/company/about-us
+- type: HelpCenter
+  url: https://www.happen.com/help
+- type: Support
+  url: https://www.happen.com/company/contact
+- type: Blog
+  url: https://www.happen.com/resource-center
+- type: Login
+  url: https://www.happen.com/loans/landing/login
+- type: TermsOfService
+  url: https://www.happen.com/legal/terms-of-use
+- type: PrivacyPolicy
+  url: https://www.happen.com/legal/privacy-policy
+- type: GitHubOrganization
+  url: https://github.com/LendingClub
+- type: InvestorRelations
+  url: https://www.happen.com/company/contact/investor-relations
+- type: Lifecycle
+  name: LendingClub API lifecycle and rebrand record
+  url: lifecycle/lending-club-lifecycle.yml
+- type: LLMsTxt
+  name: LendingClub llms.txt
+  url: llms/lending-club-llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
