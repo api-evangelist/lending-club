@@ -1,0 +1,44 @@
+# LendingClub (Happen Bank)
+
+> LendingClub is a US consumer-finance company and digital bank, founded in 2006 as a
+> peer-to-peer marketplace lender and now a national bank after its 2021 acquisition of
+> Radius Bancorp. In 2026 it rebranded as Happen Bank, N.A. (a subsidiary of Happen, Inc.)
+> and moved its web presence from lendingclub.com to happen.com. LendingClub does not
+> currently operate a public developer program: there is no developer portal, API
+> reference, OpenAPI description, SDK, or event/webhook surface. Its former public
+> Investor API served the retail Notes marketplace, which was retired in December 2020.
+
+## Status
+
+- No public API documentation, developer portal, or API reference is published.
+- No OpenAPI, AsyncAPI, GraphQL, or Protobuf specification is available.
+- No first-party SDKs, CLI, MCP server, or Agent Skills are published.
+- No `.well-known` discovery documents are served (see well-known/lending-club-well-known.yml).
+- The legacy host `https://api.lendingclub.com` still answers `/api/investor/v1/...`
+  with HTTP 401, but the interface is undocumented and closed.
+
+## Company
+
+- [Happen Bank home](https://www.happen.com/): Consumer banking and lending products.
+- [About us](https://www.happen.com/company/about-us): Company background.
+- [Help Center](https://www.happen.com/help): Customer support knowledge base.
+- [Contact](https://www.happen.com/company/contact): Support and contact channels.
+- [Resource Center](https://www.happen.com/resource-center): Articles on personal finance, loans, savings, checking, auto refinance, business loans, and institutional investing.
+- [Institutional investing](https://www.happen.com/institutional-investing/overview): Marketplace-lending program for institutional loan buyers.
+- [Investor relations](https://www.happen.com/company/contact/investor-relations): Corporate investor contact.
+- [Sign in](https://www.happen.com/loans/landing/login): Member login.
+
+## Legal
+
+- [Terms of Use](https://www.happen.com/legal/terms-of-use)
+- [Privacy Policy](https://www.happen.com/legal/privacy-policy)
+
+## Code
+
+- [GitHub organization](https://github.com/LendingClub): Four public repositories of internal Java tooling and upstream forks (gradle-maven-plugin, breeze-http-client, docker-java, neo4j-java-driver). None is a client library for a LendingClub API; last activity 2021.
+
+## API Evangelist artifacts
+
+- [apis.yml](https://raw.githubusercontent.com/api-evangelist/lending-club/refs/heads/main/apis.yml): APIs.json profile for this provider.
+- [Lifecycle record](https://raw.githubusercontent.com/api-evangelist/lending-club/refs/heads/main/lifecycle/lending-club-lifecycle.yml): Rebrand, retired developer program, and legacy API probe evidence.
+- [Well-known probe](https://raw.githubusercontent.com/api-evangelist/lending-club/refs/heads/main/well-known/lending-club-well-known.yml): Discovery-endpoint probe results.

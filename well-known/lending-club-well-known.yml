@@ -1,0 +1,74 @@
+generated: '2026-07-19'
+method: probed
+source: live HTTP probe of provider hosts
+summary: >-
+  No .well-known documents are published. The lendingclub.com / happen.com web
+  application is a Next.js SPA that answers every unmatched path under
+  /.well-known/ with HTTP 200 and the marketing HTML shell (a soft 404), so a
+  200 status here is NOT evidence of a published document. Each response body
+  was inspected and found to be HTML, not the expected media type. The API host
+  api.lendingclub.com returns 403 for all discovery paths. No WellKnown or
+  SecurityTxt pointer is wired in apis.yml because nothing is genuinely published.
+documents_found: 0
+
+hosts:
+- host: https://www.lendingclub.com
+  note: redirects to https://www.happen.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    published: false
+    reason: soft-404, returns text/html marketing shell
+  - path: /.well-known/openid-configuration
+    status: 200
+    published: false
+    reason: soft-404, returns text/html marketing shell
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    published: false
+    reason: soft-404, returns text/html marketing shell
+  - path: /.well-known/api-catalog
+    status: 200
+    published: false
+    reason: soft-404, returns text/html marketing shell
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    published: false
+    reason: soft-404, returns text/html marketing shell
+  - path: /llms.txt
+    status: 200
+    published: false
+    reason: soft-404, returns text/html marketing shell
+
+- host: https://www.happen.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    published: false
+    reason: soft-404, returns text/html marketing shell
+  - path: /llms.txt
+    status: 200
+    published: false
+    reason: soft-404, returns text/html marketing shell
+
+- host: https://api.lendingclub.com
+  note: legacy Investor API host, undocumented
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+    published: false
+  - path: /.well-known/openid-configuration
+    status: 403
+    published: false
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+    published: false
+  - path: /.well-known/api-catalog
+    status: 403
+    published: false
+  - path: /.well-known/ai-plugin.json
+    status: 403
+    published: false
+  - path: /llms.txt
+    status: 403
+    published: false

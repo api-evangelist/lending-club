@@ -1,0 +1,107 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.happen.com/
+summary: >-
+  LendingClub has no current public API program. The company rebranded to Happen Bank
+  and redirects lendingclub.com to happen.com; the former developer portal and Investor
+  API documentation are no longer published. The legacy api.lendingclub.com host still
+  answers with an authentication challenge but is undocumented and closed.
+
+rebrand:
+  from: LendingClub
+  to: Happen Bank, N.A.
+  parent: Happen, Inc.
+  domain_from: https://www.lendingclub.com/
+  domain_to: https://www.happen.com/
+  evidence:
+  - url: https://www.lendingclub.com/
+    status: 200
+    note: 301/redirect chain resolves to https://www.happen.com/
+  - url: https://developer.lendingclub.com/
+    status: 200
+    note: redirects to the happen.com marketing homepage, not a developer portal
+  - url: https://www.happen.com/
+    status: 200
+    note: page title "Happen Bank, formerly LendingClub"
+
+developer_program:
+  status: retired
+  portal_published: false
+  documentation_published: false
+  openapi_published: false
+  evidence:
+  - url: https://www.lendingclub.com/developers
+    status: 404
+  - url: https://www.lendingclub.com/developers/api-overview
+    status: 404
+  - url: https://www.happen.com/developers
+    status: 404
+  - url: https://developer.happen.com/
+    status: 0
+    note: host does not resolve
+  - url: https://www.happen.com/sitemap.xml
+    status: 200
+    note: ~650-700 URLs, none developer/API related
+
+apis:
+- name: LendingClub Investor API (legacy)
+  status: retired
+  base_url: https://api.lendingclub.com
+  version_path: /api/investor/v1
+  documented: false
+  note: >-
+    Served the retail Notes marketplace, which LendingClub retired in December 2020.
+    The host remains live but is undocumented and appears closed to new consumers.
+  probe:
+  - path: /api/investor/v1/accounts/1/summary
+    status: 401
+    note: authentication challenge - endpoint still routed
+  - path: /api/investor/v1/loans/listing
+    status: 403
+    note: forbidden / WAF
+  - path: /
+    status: 403
+
+versioning:
+  scheme: uri-path
+  observed: v1
+  docs: null
+  note: observed from the legacy /api/investor/v1 path only; no published versioning policy
+
+deprecation:
+  policy_url: null
+  sunset_header: null
+  note: no published deprecation policy or RFC 8594 Sunset support found
+
+sla:
+  url: null
+
+status_page: null
+status_page_evidence:
+- url: https://status.lendingclub.com/
+  status: 200
+  note: not a status page - redirects to the happen.com marketing homepage
+- url: https://status.happen.com/
+  status: 0
+  note: host does not resolve
+
+github_organization:
+  url: https://github.com/LendingClub
+  public_repos: 4
+  last_push: '2021-09-24'
+  api_sdks: false
+  repos:
+  - name: gradle-maven-plugin
+    language: Java
+    description: maven plugin to invoke gradle
+  - name: breeze-http-client
+    language: Java
+  - name: docker-java
+    language: Java
+    description: Java Docker API Client (fork)
+  - name: neo4j-java-driver
+    language: Java
+    description: Neo4j Bolt driver for Java (fork)
+  note: >-
+    Internal Java tooling and upstream forks; none is a client library for a
+    LendingClub API. No SDKs pointer is warranted.
