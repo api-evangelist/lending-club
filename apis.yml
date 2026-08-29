@@ -11,6 +11,17 @@ description: LendingClub is a US consumer-finance company and digital bank, orig
   of this enrichment pass the company operates no public developer program, API reference, or SDK
   surface, and no OpenAPI or event specifications are available to harvest.
 url: https://raw.githubusercontent.com/api-evangelist/lending-club/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
